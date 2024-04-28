@@ -71,7 +71,7 @@ class LoginController extends Controller
         session()->remove('logged_admin');
         session()->destroy();
 
-        return redirect()->to(base_url() . 'LoginController/login');
+        return redirect()->to(base_url() . 'LandingController/landing');
     }
     public function logoutStaff()
     {
@@ -79,7 +79,7 @@ class LoginController extends Controller
         session()->remove('logged_staff');
         session()->destroy();
 
-        return redirect()->to(base_url() . 'LoginController/login');
+        return redirect()->to(base_url() . 'LandingController/landing');
     }
     public function logoutcustomer()
     {
@@ -87,6 +87,6 @@ class LoginController extends Controller
         session()->remove('logged_customer');
         session()->destroy();
 
-        return redirect()->to(base_url() . 'LoginController/login');
+        return redirect()->to(base_url() . 'LandingController/landing');
     }
 }

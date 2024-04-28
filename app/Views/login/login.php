@@ -93,6 +93,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                             </div>
 
                             <hr class="pt-3">
+                            <a href="<?php echo base_url() . 'LandingController/landing' ?>"><button type="button" class="flex-fill btn btn-danger rounded-0">Cancel</button></a>
                             <button href="#" class="btn btn-primary btn-user btn-block rounded-pill" type="submit">
                                 Login
                             </button>

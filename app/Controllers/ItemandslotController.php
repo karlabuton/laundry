@@ -19,7 +19,7 @@ class ItemandslotController extends Controller
     {
         $admin = session()->get('logged_admin');
         $data['userdata'] = $this->dbitems->getLoggedInUserData($admin);
-        $data['data_items'] = $this->dbitems->getItems();
+        $data['data_items'] = $this->dbitems->getItem();
 
         return view("itemandslot/itemandslot", $data);
     }
@@ -49,9 +49,17 @@ class ItemandslotController extends Controller
         }
     }
 
-    public function editItems($Itemid)
+    public function editItems($id)
     {
 
+        $admin = session()->get('logged_admin');
+        $data['userdata'] = $this->dbitems->getLoggedInUserData($admin);
+        $data['data_items'] = $this->dbitems->getItemss($id);
+
+        return view('itemandslot/edititems', $data);
+    }
+    public function Edit($Itemid)
+    {
 
         $session = \CodeIgniter\Config\Services::session();
 

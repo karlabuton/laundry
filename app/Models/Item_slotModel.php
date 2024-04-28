@@ -9,7 +9,14 @@ class Item_slotModel extends Model
 
 
 
-    public function getItems()
+    public function getItemss($id)
+    {
+        $builder = $this->db->table('itemandslot')->select('*')
+            ->where('itemandslot_id', $id);
+        $result = $builder->get()->getResult();
+        return $result;
+    }
+    public function getItem()
     {
         $builder = $this->db->table('itemandslot')->select('*');
         $result = $builder->get()->getResult();

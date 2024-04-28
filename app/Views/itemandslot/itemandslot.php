@@ -51,7 +51,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                                 <td><?php echo $items->item_avail ?></td>
                                 <td><?php echo $items->item_price ?></td>
                                 <td class="action-icons text-center">
-                                    <a href="#" data-toggle="modal" data-target="#editcustomer_<?php echo $items->itemandslot_id ?>">
+                                    <a href="<?php echo base_url() . 'ItemandslotController/edititems/' . $items->itemandslot_id ?>">
                                         <i title=" Edit" class="fas fa-edit text-lg text-info"></i>
                                     </a>
                                     <a href="<?php echo base_url() . 'ItemandslotController/deleteitems/' . $items->itemandslot_id ?>">
@@ -75,7 +75,7 @@ $page_session = \CodeIgniter\Config\Services::session();
 </div>
 <!-- End of Main Content -->
 <?= $this->include("itemandslot/additems") ?>
-<?= $this->include("itemandslot/edititems") ?>
+
 
 
 

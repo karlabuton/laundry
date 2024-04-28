@@ -265,7 +265,7 @@
     <!-- Add a link for customers to provide feedback -->
     <div class="testimonial-item">
         <div class="bg-light text-center p-4 pt-0">
-            <a href="feedback.php" class="btn btn-primary">CUSTOMERS FEEDBACK, CLICK TO SEE MORE</a>
+            <a href="<?= base_url() ?>FeedbackController/feedback" class="btn btn-primary">CUSTOMERS FEEDBACK, CLICK TO SEE MORE</a>
         </div>
     </div>
     </div>

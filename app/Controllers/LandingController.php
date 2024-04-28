@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\SignupModel;
+use App\Models\landingModel;
 
 
 class LandingController extends Controller
@@ -12,7 +12,7 @@ class LandingController extends Controller
     public function __construct()
     {
         helper('form');
-        $this->dbsign = new SignupModel();
+        $this->dbsign = new landingModel();
     }
 
     public function landing()
@@ -42,8 +42,8 @@ class LandingController extends Controller
     }
     public function landingservice()
     {
-
-        return view("landing/service");
+        $data['data_feedback'] = $this->dbsign->getFeed();
+        return view("landing/service", $data);
     }
     public function landingsingle()
     {

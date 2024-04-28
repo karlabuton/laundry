@@ -161,191 +161,173 @@
             <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Testimonial</h6>
             <h1 class="display-4 text-center mb-5"> Customers Feedback</h1>
             <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Comment</p>
+                <?php foreach ($data_feedback as $feedback) {
+                ?>
+                    <div class="testimonial-item">
+
+                        <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                        <div class="bg-light text-center p-4 pt-0">
+                            <h5 class="font-weight-medium mt-5"><?php echo $feedback->customer_name ?></h5>
+                            <p class="text-muted font-italic">Profession</p>
+                            <p class="m-0"><?php echo $feedback->description ?></p>
+                        </div>
+                    </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <div class="main-feedback-form">
+            <form action="<?= base_url() ?>FeedbackController/addfeedback" method="POST">
+
+                <label for="customer_name">Name</label>
+                <input type="text" id="customer_name" name="customer_name" class="customer_name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="email" placeholder="Your email" required>
+
+                <label for="phone_number">Phone Number</label>
+                <input type="tel" name="phone_number" class="tel" maxlength="10" id="phone_number" placeholder="Your phone number" required>
+
+                <label for="feedback_type">Feedback Type</label><br>
+                <input type="radio" id="comments" name="feedback_type" value="Comments">
+                <label for="comments">Comments</label>
+                <input type="radio" id="suggestions" name="feedback_type" value="Suggestions">
+                <label for="suggestions">Suggestions</label>
+                <input type="radio" id="questions" name="feedback_type" value="Questions">
+                <label for="questions">Questions</label><br><br>
+
+                <label for="description">Description of your Feedback:</label>
+                <textarea name="description" id="description" placeholder="Please describe your feedback here" rows="5" required></textarea>
+
+                <input name="submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+
+        <style>
+            input[type='text'],
+            input[type='email'],
+            input[type='tel'],
+            textarea {
+                width: 100%;
+                padding: 10px 0 10px 6px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            input[type='text']:focus,
+            input[type='email']:focus,
+            input[type='tel']:focus,
+            select:focus,
+            textarea:focus {
+                border: 1px solid #5db6db;
+                box-shadow: 0 0 10px #b9eaff;
+                outline: none !important;
+            }
+
+            input[type='submit'] {
+                background: rgb(39, 160, 210);
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            .main-feedback-form {
+                max-width: 400px;
+                margin: 0 auto;
+                background: #e9e9e9;
+                padding: 20px 45px 20px 25px;
+                border-radius: 5px;
+            }
+        </style>
+
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-white mt-5 pt-4 px-sm-3 px-md-5">
+            <div class="row pt-4">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a href="">
+                        <h1 class="text-secondary mb-3"><span class="text-white">WASH</span>ME</h1>
+                    </a>
+                    <p>Fresh, fast, and fabulous! Transform your laundry routine with our professional and friendly services.</p>
+                    <div class="d-flex justify-content-start mt-3">
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Comment</p>
-                    </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4 class="text-white mb-4">Get In Touch</h4>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>POBLACION, MAIGO, LANAO DEL NORTE</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+63 965-548-5195</p>
+                    <p><i class="fa fa-envelope mr-2"></i>jessielomoljo@gmail.com</p>
                 </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Comment</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Comment</p>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landing"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingabout"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                        <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingservice"><i class="fa fa-angle-right mr-2"></i>Services</a>
+                        <a class="text-white" href="<?= base_url() ?>LandingController/landingcontact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Testimonial End -->
-
-    <div class="main-feedback-form">
-        <form action="submit_feedback.php" method="POST">
-
-            <label for="customer_name">Name</label>
-            <input type="text" id="customer_name" name="customer_name" class="customer_name" placeholder="Your name" required>
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="email" placeholder="Your email" required>
-
-            <label for="phone_number">Phone Number</label>
-            <input type="tel" name="phone_number" class="tel" maxlength="10" id="phone_number" placeholder="Your phone number" required>
-
-            <label for="feedback_type">Feedback Type</label><br>
-            <input type="radio" id="comments" name="feedback_type" value="Comments">
-            <label for="comments">Comments</label>
-            <input type="radio" id="suggestions" name="feedback_type" value="Suggestions">
-            <label for="suggestions">Suggestions</label>
-            <input type="radio" id="questions" name="feedback_type" value="Questions">
-            <label for="questions">Questions</label><br><br>
-
-            <label for="description">Description of your Feedback:</label>
-            <textarea name="description" id="description" placeholder="Please describe your feedback here" rows="5" required></textarea>
-
-            <input name="submit" type="submit" value="Submit">
-        </form>
-    </div>
+        <!-- Footer End -->
 
 
-    <style>
-        input[type='text'],
-        input[type='email'],
-        input[type='tel'],
-        textarea {
-            width: 100%;
-            padding: 10px 0 10px 6px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        input[type='text']:focus,
-        input[type='email']:focus,
-        input[type='tel']:focus,
-        select:focus,
-        textarea:focus {
-            border: 1px solid #5db6db;
-            box-shadow: 0 0 10px #b9eaff;
-            outline: none !important;
-        }
-
-        input[type='submit'] {
-            background: rgb(39, 160, 210);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .main-feedback-form {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #e9e9e9;
-            padding: 20px 45px 20px 25px;
-            border-radius: 5px;
-        }
-    </style>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= base_url() ?>public/landing/lib/easing/easing.min.js"></script>
+        <script src="<?= base_url() ?>public/landing/lib/waypoints/waypoints.min.js"></script>
+        <script src="<?= base_url() ?>public/landing/lib/counterup/counterup.min.js"></script>
+        <script src="<?= base_url() ?>public/landing/lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 pt-4 px-sm-3 px-md-5">
-        <div class="row pt-4">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <a href="">
-                    <h1 class="text-secondary mb-3"><span class="text-white">WASH</span>ME</h1>
-                </a>
-                <p>Fresh, fast, and fabulous! Transform your laundry routine with our professional and friendly services.</p>
-                <div class="d-flex justify-content-start mt-3">
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h4 class="text-white mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>POBLACION, MAIGO, LANAO DEL NORTE</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+63 965-548-5195</p>
-                <p><i class="fa fa-envelope mr-2"></i>jessielomoljo@gmail.com</p>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h4 class="text-white mb-4">Quick Links</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landing"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingabout"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingservice"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white" href="<?= base_url() ?>LandingController/landingcontact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+        <!-- Contact Javascript File -->
+        <script src="<?= base_url() ?>public/landing/mail/jqBootstrapValidation.min.js"></script>
+        <script src="<?= base_url() ?>public/landing/mail/contact.js"></script>
 
+        <!-- Template Javascript -->
+        <script src="<?= base_url() ?>public/landing/js/main.js"></script>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        <!-- Add this script at the end of your service.html file -->
+        <script>
+            // Function to get URL parameter by name
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
 
+            // Check if success parameter exists in the URL
+            var successParam = getUrlParameter('success');
+            if (successParam === 'true') {
+                // Display success message
+                alert('Your feedback was submitted successfully!');
+            }
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>public/landing/lib/easing/easing.min.js"></script>
-    <script src="<?= base_url() ?>public/landing/lib/waypoints/waypoints.min.js"></script>
-    <script src="<?= base_url() ?>public/landing/lib/counterup/counterup.min.js"></script>
-    <script src="<?= base_url() ?>public/landing/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="<?= base_url() ?>public/landing/mail/jqBootstrapValidation.min.js"></script>
-    <script src="<?= base_url() ?>public/landing/mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="<?= base_url() ?>public/landing/js/main.js"></script>
-
-    <!-- Add this script at the end of your service.html file -->
-    <script>
-        // Function to get URL parameter by name
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        };
-
-        // Check if success parameter exists in the URL
-        var successParam = getUrlParameter('success');
-        if (successParam === 'true') {
-            // Display success message
-            alert('Your feedback was submitted successfully!');
-        }
-
-        // Check if error parameter exists in the URL
-        var errorParam = getUrlParameter('error');
-        if (errorParam === 'true') {
-            // Display error message
-            alert('An error occurred while submitting your feedback. Please try again later.');
-        }
-    </script>
+            // Check if error parameter exists in the URL
+            var errorParam = getUrlParameter('error');
+            if (errorParam === 'true') {
+                // Display error message
+                alert('An error occurred while submitting your feedback. Please try again later.');
+            }
+        </script>
 
 </body>
 

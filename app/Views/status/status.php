@@ -52,7 +52,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                                 <td><?php echo $transaction->total ?></td>
                                 <td><?php echo $transaction->date ?></td>
                                 <td class="action-icons text-center">
-                                    <a href="#" data-toggle="modal" data-target="#editstatus<?php echo $transaction->req_id ?>">
+                                    <a href="<?php echo base_url() . 'StatusController/editStatusview/' . $transaction->req_id ?>">
                                         <i title="Edit" class="fas fa-edit text-lg text-info"></i>
                                     </a>
 
@@ -71,7 +71,6 @@ $page_session = \CodeIgniter\Config\Services::session();
 <!-- End of Main Content -->
 
 
-<?= $this->include("status/editstatus")
-?>
+
 
 <?= $this->endSection() ?>

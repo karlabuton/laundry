@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -76,13 +76,13 @@
                         <a href="service.html" class="nav-item nav-link">Services</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Account</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="#" class="dropdown-item active">Login</a>
-                            <a href="#" class="dropdown-item">Signup</a>
+                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Account</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="#" class="dropdown-item active">Login</a>
+                                <a href="#" class="dropdown-item">Signup</a>
+                            </div>
                         </div>
                     </div>
-                </div>
             </nav>
         </div>
     </div>
@@ -299,37 +299,39 @@
     </section>
     <!-- Feedback Section -->
 
-            <!-- Footer Start -->
-            <div class="container-fluid bg-primary text-white mt-5 pt-4 px-sm-3 px-md-5">
-                <div class="row pt-4">
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <a href=""><h1 class="text-secondary mb-3"><span class="text-white">WASH</span>ME</h1></a>
-                        <p>Fresh, fast, and fabulous! Transform your laundry routine with our professional and friendly services.</p>
-                        <div class="d-flex justify-content-start mt-3">
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h4 class="text-white mb-4">Get In Touch</h4>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>POBLACION, MAIGO, LANAO DEL NORTE</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+63 965-548-5195</p>
-                        <p><i class="fa fa-envelope mr-2"></i>jessielomoljo@gmail.com</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h4 class="text-white mb-4">Quick Links</h4>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                            <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 pt-4 px-sm-3 px-md-5">
+        <div class="row pt-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="">
+                    <h1 class="text-secondary mb-3"><span class="text-white">WASH</span>ME</h1>
+                </a>
+                <p>Fresh, fast, and fabulous! Transform your laundry routine with our professional and friendly services.</p>
+                <div class="d-flex justify-content-start mt-3">
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <!-- Footer End -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h4 class="text-white mb-4">Get In Touch</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>POBLACION, MAIGO, LANAO DEL NORTE</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+63 965-548-5195</p>
+                <p><i class="fa fa-envelope mr-2"></i>jessielomoljo@gmail.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h4 class="text-white mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Services</a>
+                    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
 

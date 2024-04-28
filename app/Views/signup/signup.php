@@ -93,7 +93,7 @@
 
                                 </div>
                                 <div class="modal-footer d-flex">
-                                    <button type="button" class="flex-fill btn btn-danger rounded-0" data-dismiss="modal">Cancel</button>
+                                    <a href="<?php echo base_url() . 'LandingController/landing' ?>"><button type="button" class="flex-fill btn btn-danger rounded-0">Cancel</button></a>
                                     <button type="submit" class="flex-fill btn btn-primary rounded-0">Save</button>
                                 </div>
                             </form>

@@ -54,8 +54,13 @@
                            </div>
                        </div>
                        <div class="form-group">
+                           <label class="control-label ">Total Weight Price</label>
+                           <input type="number" class="form-control" placeholder='Enter Price' name="total" required>
+
+                       </div>
+                       <div class="form-group">
                            <label class="control-label ">Laundry Type</label>
-                           <input type="number" class="form-control" placeholder='Laundry Type' name="purpose" required>
+                           <input type="text" class="form-control" placeholder='Laundry Type' name="purpose" required>
 
                        </div>
                        <label class="control-label ">Add Ons</label>
