@@ -41,6 +41,7 @@ class TransactionController extends Controller
         $c_id = $this->request->getVar('c_id');
         $employee_id = $this->request->getVar('employee_id');
         $weight = $this->request->getVar('weight');
+        $purpose = $this->request->getVar('purpose');
         $itemandslot_id = $this->request->getVar('itemandslot_id');
         $date = $this->request->getVar('date');
 
@@ -50,6 +51,7 @@ class TransactionController extends Controller
             'c_id' => $c_id,
             'employee_id' => $employee_id,
             'weight' => $weight,
+            'purpose' => $purpose,
             'itemandslot_id' => $itemandslot_id,
             'date' => $date,
 

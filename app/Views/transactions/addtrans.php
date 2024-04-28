@@ -53,6 +53,11 @@
                                Fillup Laundry Weight!
                            </div>
                        </div>
+                       <div class="form-group">
+                           <label class="control-label ">Laundry Type</label>
+                           <input type="number" class="form-control" placeholder='Laundry Type' name="purpose" required>
+
+                       </div>
                        <label class="control-label ">Add Ons</label>
                        <select class="form-control" name="itemandslot_id">
                            <option value="">--Please Select--</option>

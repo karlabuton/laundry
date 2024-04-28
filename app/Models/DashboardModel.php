@@ -127,12 +127,12 @@ class DashboardModel extends Model
         $builder = $this->db->query("
         SELECT 
         c.name_customer,
-        u.user_id
+        u.c_id
     FROM 
         user u
     left JOIN 
         customer c ON c.c_id = u.c_id
-    Where u.user_id = '$Cust'");
+    Where u.c_id = '$Cust'");
         $result = $builder->getResult();
 
 

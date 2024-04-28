@@ -7,11 +7,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-3" href="<?php echo base_url()?>DashbaordController/E_dashboard">
+            <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-3" href="<?php echo base_url() ?>DashbaordController/E_dashboard">
                 <div class="sidebar-brand-icon">
                     <div class="sidebar-brand-text mx-3">LMS</div>
                 </div>
-                
+
             </a>
 
             <!-- Divider -->
@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url()?>DashboardController/E_dashboard">
+                <a class="nav-link" href="<?php echo base_url() ?>DashboardController/E_dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -28,7 +28,7 @@
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url()?>E_CustomerController/customer">
+                <a class="nav-link" href="<?php echo base_url() ?>E_CustomerController/customer">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Customers</span></a>
             </li>
@@ -36,7 +36,7 @@
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url()?>E_TransactionController/transaction">
+                <a class="nav-link" href="<?php echo base_url() ?>E_TransactionController/transaction">
                     <i class="fas fa-fw fa-dollar-sign"></i>
                     <span>Transactions</span></a>
             </li>
@@ -44,7 +44,7 @@
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url()?>E_StatusController/status">
+                <a class="nav-link" href="<?php echo base_url() ?>E_StatusController/status">
                     <i class="fas fa-fw fa-share"></i>
                     <span>Status</span></a>
             </li>
@@ -68,21 +68,19 @@
                 </div>
             </li> -->
 
-            
+
 
             <!-- Nav Item - Report Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-file-pdf"></i>
                     <span>Reports Section</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url()?>E_ReportController/report">Employee</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>E_ReportController/report_cust">Transaction</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>expenditure/report">Feedback!</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>E_ReportController/report">Employee</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>E_ReportController/report_cust">Transaction</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>expenditure/report">Feedback!</a>
                     </div>
                 </div>
             </li>
@@ -128,9 +126,8 @@
 
                         <!-- Web Page Logo -->
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url().'Dashboard/E_dashboard' ?>">
-                                <img class="logo"
-                                    src="<?php echo base_url().'public/assets/img/logo.jpg' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'Dashboard/E_dashboard' ?>">
+                                <img class="logo" src="<?php echo base_url() . 'public/assets/img/logo.jpg' ?>">
                             </a>
                         </li>
 
@@ -145,15 +142,15 @@
 
                     </ul>
                     <div class="font-weight-bold mr-4">
-                        Welcome, <?//php echo $username ?>!
+                        Welcome, <? //php echo $username 
+                                    ?>!
                     </div>
 
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Logout Modal-->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal"
-                    aria-hidden="true">
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -164,11 +161,11 @@
                             <div class="modal-body mx-3 mb-4">Are you sure you're going out?</div>
                             <div class="modal-footer">
                                 <div class="text-center">
-                                    <a class="flex-fill btn btn-danger p-2 rounded-0" href="<?php echo base_url().'welcome/logout'?>">Logout</a>
+                                    <a class="flex-fill btn btn-danger p-2 rounded-0" href="<?php echo base_url() . 'LoginController/logoutStaff' ?>">Logout</a>
                                     <button class="flex-fill btn btn-secondary p-2 rounded-0" type="button" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-E_
+                E_

@@ -24,7 +24,8 @@ class TransactionModel extends Model
         r.c_id,
         r.req_id,
         i.item_avail,
-        r.itemandslot_id
+        r.itemandslot_id,
+        r.purpose
 
     FROM 
         request r

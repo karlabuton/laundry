@@ -50,4 +50,27 @@ class StatusModel extends Model
 
         return $result;
     }
+
+    public function editstatus($data, $Cid)
+    {
+        $builder = $this->db->table('request')->where('req_id', $Cid);
+        $builder->update($data);
+
+        if ($this->db->affectedRows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function getItems()
+    {
+        $builder = $this->db->table('itemandslot')->select('*');
+        $result = $builder->get()->getResult();
+
+        if (count($result) >= 0) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }

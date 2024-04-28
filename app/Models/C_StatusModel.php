@@ -22,9 +22,9 @@ class C_StatusModel extends Model
 
 
 
-    public function getStatus()
+    public function getStatus($id)
     {
-        $builder = $this->db->query('
+        $builder = $this->db->query("
         SELECT 
         c.name_customer, 
         e.name_employee, 
@@ -52,7 +52,8 @@ class C_StatusModel extends Model
     left JOIN 
         employee e ON e.employee_id = r.employee_id
     left JOIN 
-        itemandslot i ON i.itemandslot_id = r.itemandslot_id;');
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+        where r.c_id = '$id'");
         $result = $builder->getResult();
 
         if (count($result) >= 0) {
@@ -66,12 +67,12 @@ class C_StatusModel extends Model
         $builder = $this->db->query("
         SELECT 
         c.name_customer,
-        u.user_id
+        u.c_id
     FROM 
         user u
     left JOIN 
         customer c ON c.c_id = u.c_id
-    Where u.user_id = '$Cust'");
+    Where u.c_id = '$Cust'");
         $result = $builder->getResult();
 
 

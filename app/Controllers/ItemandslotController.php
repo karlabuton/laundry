@@ -48,8 +48,10 @@ class ItemandslotController extends Controller
             return redirect()->to(base_url() . "ItemandslotController/items");
         }
     }
-    public function edititems($id)
+
+    public function editItems($Itemid)
     {
+
 
         $session = \CodeIgniter\Config\Services::session();
 
@@ -58,12 +60,13 @@ class ItemandslotController extends Controller
         $item_price = $this->request->getVar('item_price');
 
 
-        $empdata = array(
+        $data = array(
             'item_avail' => $item_avail,
             'item_price' => $item_price,
 
         );
-        $status = $this->dbitems->edititemslot($empdata, $id);
+
+        $status = $this->dbitems->edititemslot($data, $Itemid);
 
         if ($status) {
             $session->setTempdata('success', 'Added Successfully!', 3);
@@ -73,6 +76,7 @@ class ItemandslotController extends Controller
             return redirect()->to(base_url() . "ItemandslotController/items");
         }
     }
+
     public function deleteitems($id)
     {
         $session = \CodeIgniter\Config\Services::session();

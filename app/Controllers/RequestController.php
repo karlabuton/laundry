@@ -18,27 +18,60 @@ class RequestController extends Controller
     {
         $cust = session()->get('logged_customer');
         $data['userdata'] = $this->dbreq->getLoggedCustUserData($cust);
-        $data['data_customer'] = $this->dbreq->getReq();
+        $data['data_customer'] = $this->dbreq->getReq($cust);
         $data['data_item'] = $this->dbreq->getItem();
+
 
         return view("customeracc/customer_req", $data);
     }
 
     public function addrequest()
     {
+        $session = \CodeIgniter\Config\Services::session();
+
+
+        $cust = session()->get('logged_customer');
+        $c_id = $cust;
+        $weight = $this->request->getVar('weight');
+        $purpose = $this->request->getVar('purpose');
+        $itemandslot_id = $this->request->getVar('itemandslot_id');
+
+
+
+
+        $empdata = array(
+
+            'c_id' => $c_id,
+            'weight' => $weight,
+            'purpose' => $purpose,
+            'itemandslot_id' => $itemandslot_id,
+
+
+        );
+        $status = $this->dbreq->addreq($empdata);
+
+        if ($status) {
+            $session->setTempdata('success', 'Added Successfully!', 3);
+            return redirect()->to(base_url() . "RequestController/customer_req");
+        } else {
+            $session->setTempdata('error', 'Not Added! Try Again!', 3);
+            return redirect()->to(base_url() . "RequestController/customer_req");
+        }
     }
 
     public function transaction()
     {
         $cust = session()->get('logged_customer');
         $data['userdata'] = $this->dbreq->getLoggedCustUserData($cust);
-        $data['data_emp'] = $this->dbreq->getReq();
+        $data['data_emp'] = $this->dbreq->getReq($cust);
         return view("customeracc/transaction", $data);
     }
     public function print_Ctrans()
     {
-        $data['data_emp'] = $this->dbreq->getReq();
+        $cust = session()->get('logged_customer');
+        $data['userdata'] = $this->dbreq->getLoggedCustUserData($cust);
+        $data['data_customer'] = $this->dbreq->getReq($cust);
 
-        return view("report/print_Ctrans", $data);
+        return view("customeracc/print_Ctrans", $data);
     }
 }

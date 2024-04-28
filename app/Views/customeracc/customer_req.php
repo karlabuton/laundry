@@ -30,6 +30,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                             <th>Employee</th>
                             <th>Customer's Name<sup>(M/F)</sup></th>
                             <th>Contact</th>
+                            <th>Laundry Type</th>
                             <th>Weight</th>
                             <th>Add Ons</th>
                             <th>Total</th>
@@ -49,6 +50,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                                 <td><?php echo $customer->name_employee ?></td>
                                 <td><?php echo $customer->name_customer . ' ' ?><sup>(<?php echo substr($customer->gender_c, 0, 1) ?>)</sup></td>
                                 <td><?php echo $customer->phone ?></td>
+                                <td><?php echo $customer->purpose ?></td>
                                 <td><?php echo $customer->address ?></td>
                                 <td><?php echo $customer->item_avail ?></td>
                                 <td><?php echo $customer->total ?></td>

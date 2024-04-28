@@ -5,6 +5,7 @@ $page_session = \CodeIgniter\Config\Services::session();
 <?= $this->extend("layout/adminbase"); ?>
 
 <?= $this->section("content") ?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -33,7 +34,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                         <tr class="">
 
                             <th>ID</th>
-                            <th>Items Available <sup>(M/F)</sup></th>
+                            <th>Items Available</th>
                             <th>Price</th>
                             <th>Actions</th>
                         </tr>
@@ -50,29 +51,33 @@ $page_session = \CodeIgniter\Config\Services::session();
                                 <td><?php echo $items->item_avail ?></td>
                                 <td><?php echo $items->item_price ?></td>
                                 <td class="action-icons text-center">
-                                    <a href="#" data-toggle="modal" data-target="#editItems<?php echo $items->itemandslot_id ?>">
-                                        <i title="Edit" class="fas fa-edit text-lg text-info"></i>
+                                    <a href="#" data-toggle="modal" data-target="#editcustomer_<?php echo $items->itemandslot_id ?>">
+                                        <i title=" Edit" class="fas fa-edit text-lg text-info"></i>
                                     </a>
-
                                     <a href="<?php echo base_url() . 'ItemandslotController/deleteitems/' . $items->itemandslot_id ?>">
                                         <i title="Delete" class="fas fa-trash text-lg text-danger"></i>
                                     </a>
-
                                 </td>
+
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
+
             </div>
         </div>
-    </div>
 
-</div>
-<!-- /.container-fluid -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+
 </div>
 <!-- End of Main Content -->
 <?= $this->include("itemandslot/additems") ?>
 <?= $this->include("itemandslot/edititems") ?>
+
+
 
 
 <?= $this->endSection() ?>

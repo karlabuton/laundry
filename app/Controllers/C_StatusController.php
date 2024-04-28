@@ -18,13 +18,7 @@ class C_StatusController extends Controller
     {
         $cust = session()->get('logged_customer');
         $data['userdata'] = $this->dbstat->getLoggedCustUserData($cust);
-        $data['data_customer'] = $this->dbstat->getStatus();
+        $data['data_customer'] = $this->dbstat->getStatus($cust);
         return view("customeracc/status", $data);
-    }
-
-    public function transaction()
-    {
-
-        return view("customeracc/transaction");
     }
 }

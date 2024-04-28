@@ -34,6 +34,7 @@ $page_session = \CodeIgniter\Config\Services::session();
 
                             <th>Customer</th>
                             <th>Employee</th>
+                            <th>Laundry Type</th>
                             <th>Weight</th>
                             <th>Add Ons</th>
                             <th>Total</th>
@@ -58,6 +59,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                                     <span class="row px-3  text-xs"><?php echo $transaction->employee_id ?></span>
                                     <span class="row px-3"><?php echo $transaction->name_employee ?></span>
                                 </td>
+                                <td><?php echo $transaction->purpose ?></td>
                                 <td><?php echo $transaction->weight ?> KG</td>
                                 <td><?php echo $transaction->item_avail ?></td>
                                 <td><?php echo $transaction->total ?></td>

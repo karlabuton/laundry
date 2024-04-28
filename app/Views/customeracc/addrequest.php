@@ -11,17 +11,13 @@
              <form action="<?php echo base_url() . 'RequestController/addrequest' ?>" method="post" class="user needs-validation mx-3 mb-4" novalidate>
                  <div class="modal-body">
 
+
+
                      <div class="form-group">
-                         <label class="control-label ">Customer Name</label>
-                         <select class="form-control" name="c_id" required>
-                             <option value="">--Please Select--</option>
-                             <?php foreach ($data_customer as $customer) { ?>
-                                 <option value="<?= $customer->c_id ?>"><?= $customer->name_customer ?></option>
-                             <?php } ?>
-                         </select>
+                         <label class="control-label ">Purpose</label>
+                         <input type="text" class="form-control" placeholder='Purpose' name="purpose" required>
+
                      </div>
-
-
 
                      <div class="form-group">
                          <label class="control-label ">Weight</label>

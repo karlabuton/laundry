@@ -13,12 +13,7 @@ class Item_slotModel extends Model
     {
         $builder = $this->db->table('itemandslot')->select('*');
         $result = $builder->get()->getResult();
-
-        if (count($result) >= 0) {
-            return $result;
-        } else {
-            return false;
-        }
+        return $result;
     }
     public function additems($data)
     {

@@ -167,7 +167,7 @@
                             <div class="modal-body mx-3 mb-4">Are you sure you're going out?</div>
                             <div class="modal-footer">
                                 <div class="text-center">
-                                    <a class="flex-fill btn btn-danger p-2 rounded-0" href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a>
+                                    <a class="flex-fill btn btn-danger p-2 rounded-0" href="<?php echo base_url() . 'LoginController/logoutCustomer' ?>">Logout</a>
                                     <button class="flex-fill btn btn-secondary p-2 rounded-0" type="button" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>

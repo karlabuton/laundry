@@ -38,7 +38,7 @@
                                <select class="form-control" name="employee_id" required>
                                    <option value="">--Please Select--</option>
                                    <?php
-                                    foreach ($data_customer as $employee) {
+                                    foreach ($data_employee as $employee) {
                                         if ($employee->active == 1) {
                                     ?>
                                            <option value="<?php echo $employee->employee_id ?>" <?php if ($employee->employee_id === $transaction->employee_id) {
@@ -66,9 +66,9 @@
                            <select class="form-control" name="itemandslot_id">
                                <option value="">--Please Select--</option>
                                <?php
-                                foreach ($data_customer as $items) {
+                                foreach ($data_items as $items) {
                                 ?>
-                                   <option value="<?php echo $items->itemandslot_id ?>" <?php if ($items->itemandslot_id === $transaction->itemandslot_id) {
+                                   <option value="<?php echo $items->itemandslot_id ?>" <?php if ($items->itemandslot_id) {
                                                                                             echo "selected";
                                                                                         } ?>>
                                        <?php echo $items->itemandslot_id . ' ' . $items->item_avail ?>
@@ -78,10 +78,8 @@
 
                            <div class="form-group">
                                <label class="control-label ">Date</label>
-                               <input type="date" class="form-control" placeholder='Laundry Order Date' name="date" value="<?php echo $transaction->date ?>" required>
-                               <div class="invalid-feedback">
-                                   Fill in the date of the laundry order!
-                               </div>
+                               <input type="date" class="form-control" name="date" value="<?php echo $transaction->date ?>">
+
                            </div>
                            <div class="modal-footer d-flex">
                                <button type="button" class="flex-fill btn btn-danger rounded-0" data-dismiss="modal">Cancel</button>

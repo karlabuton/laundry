@@ -1,3 +1,6 @@
+<?php
+$page_session = \CodeIgniter\Config\Services::session();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +43,20 @@
         object-position: center center;
     }
 </style>
+
+
+<!-- Prompt Message -->
+<?php if ($page_session->getTempdata('success')) : ?>
+    <div id="hidemessage" class="alert alert-success" role="alert">
+        <?= $page_session->getTempdata('success'); ?>
+    </div>
+<?php endif; ?>
+<?php if ($page_session->getTempdata('error')) : ?>
+    <div id="hidemessage" class="alert alert-danger" role="alert">
+        <?= $page_session->getTempdata('error'); ?>
+    </div>
+<?php endif; ?>
+
 
 <body class="bg-gradient">
 

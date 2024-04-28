@@ -7,9 +7,9 @@ use CodeIgniter\Model;
 class RequestModel extends Model
 {
 
-    public function getReq()
+    public function getReq($id)
     {
-        $builder = $this->db->query('
+        $builder = $this->db->query("
         SELECT 
         c.name_customer, 
         e.name_employee, 
@@ -28,7 +28,8 @@ class RequestModel extends Model
         r.itemandslot_id,
         c.gender_c,
         c.address,
-        c.phone
+        c.phone,
+        r.purpose
 
     FROM 
         request r
@@ -37,7 +38,8 @@ class RequestModel extends Model
     left JOIN 
         employee e ON e.employee_id = r.employee_id
     left JOIN 
-        itemandslot i ON i.itemandslot_id = r.itemandslot_id;');
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+	where r.c_id = '$id'");
         $result = $builder->getResult();
 
         if (count($result) >= 0) {
@@ -80,15 +82,25 @@ class RequestModel extends Model
         $builder = $this->db->query("
         SELECT 
         c.name_customer,
-        u.user_id
+        u.user_id,
+        u.c_id
     FROM 
         user u
     left JOIN 
         customer c ON c.c_id = u.c_id
-    Where u.user_id = '$Cust'");
+    Where u.c_id = '$Cust'");
         $result = $builder->getResult();
 
 
         return $result;
+    }
+    public function addreq($data)
+    {
+        $this->db->table('request')->insert($data);
+        if ($this->db->affectedRows() >= 1) {
+            return $this->db->insertID();
+        } else {
+            return false;
+        }
     }
 }

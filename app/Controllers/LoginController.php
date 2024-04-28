@@ -26,9 +26,10 @@ class LoginController extends Controller
         $userdata = $this->dblogin->verifyUsername($username);
         if ($userdata) {
             if ($password == $userdata['password']) {
+
                 if ($usertype == 'Customer' && $usertype == $userdata['usertype']) {
                     // echo "Welcome Customer";
-                    $this->session->set('logged_customer', $userdata['user_id']);
+                    $this->session->set('logged_customer', $userdata['c_id']);
                     return redirect()->to(base_url() . 'DashboardController/c_dashboard');
                 } elseif ($usertype == 'Staff' && $usertype == $userdata['usertype']) {
                     // echo "Welcome Staff";
@@ -64,8 +65,28 @@ class LoginController extends Controller
         return view("login/login");
     }
 
-    public function logout()
+    public function logoutAdmin()
     {
-        echo "logout";
+
+        session()->remove('logged_admin');
+        session()->destroy();
+
+        return redirect()->to(base_url() . 'LoginController/login');
+    }
+    public function logoutStaff()
+    {
+
+        session()->remove('logged_staff');
+        session()->destroy();
+
+        return redirect()->to(base_url() . 'LoginController/login');
+    }
+    public function logoutcustomer()
+    {
+
+        session()->remove('logged_customer');
+        session()->destroy();
+
+        return redirect()->to(base_url() . 'LoginController/login');
     }
 }
