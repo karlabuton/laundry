@@ -36,6 +36,17 @@ $page_session = \CodeIgniter\Config\Services::session();
         overflow: hidden;
     }
 
+    .bg-gradient {
+        background-image: url(<?= base_url() ?>public/landing/ss/gif.gif);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.8);
+        /* Adding some opacity to make the card stand out */
+    }
+
     #system-logo {
         height: 15em !important;
         width: 15em !important;

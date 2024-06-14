@@ -34,13 +34,25 @@ $page_session = \CodeIgniter\Config\Services::session();
         height: 100%;
         width: 100%;
         overflow: hidden;
-    }
 
-    #system-logo {
-        height: 15em !important;
-        width: 15em !important;
-        object-fit: cover;
-        object-position: center center;
+        .bg-gradient {
+            background-image: url(<?= base_url() ?>public/landing/ss/gif.gif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            /* Adding some opacity to make the card stand out */
+        }
+
+
+        #system-logo {
+            height: 15em !important;
+            width: 15em !important;
+            object-fit: cover;
+            object-position: center center;
+        }
     }
 </style>
 
@@ -93,10 +105,11 @@ $page_session = \CodeIgniter\Config\Services::session();
                             </div>
 
                             <hr class="pt-3">
-                            <a href="<?php echo base_url() . 'LandingController/landing' ?>"><button type="button" class="flex-fill btn btn-danger rounded-0">Cancel</button></a>
                             <button href="#" class="btn btn-primary btn-user btn-block rounded-pill" type="submit">
                                 Login
                             </button>
+                            <a class="flex-fill btn btn-danger btn-block rounded-pill" href="<?php echo base_url() ?>LandingController/landing">Cancel</a>
+
 
                         </form>
                     </div>

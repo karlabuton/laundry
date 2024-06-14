@@ -48,8 +48,7 @@
                              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Request</div>
                              <div class="row no-gutters align-items-center">
                                <div class="col-auto">
-                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><? //php echo $n_transaction_active 
-                                                                                          ?></div>
+                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $totalpending ?></div>
                                </div>
                              </div>
                            </div>
@@ -73,7 +72,7 @@
                              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Status</div>
                              <div class="row no-gutters align-items-center">
                                <div class="col-auto">
-                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><? //php echo $total_income 
+                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $status
                                                                                           ?></div>
                                </div>
                              </div>
@@ -96,8 +95,8 @@
                              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Transactions</div>
                              <div class="row no-gutters align-items-center">
                                <div class="col-auto">
-                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Php <? //php echo $total_expenditure 
-                                                                                              ?></div>
+                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Php <?php echo $totalincome['total_sum']; ?>.00
+                                 </div>
                                </div>
                              </div>
                            </div>

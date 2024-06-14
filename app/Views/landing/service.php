@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DRYME - Free Laundry Service Website Template</title>
+    <title>Laundry Management System | CodeIgniter Project</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="<?= base_url() ?>public/landing/img/favicon.ico" rel="icon">
+    <link href="<?= base_url() ?>public/assets/img/logo.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -74,7 +74,7 @@
                         <a href="<?= base_url() ?>LandingController/landing" class="nav-item nav-link">Home</a>
                         <a href="<?= base_url() ?>LandingController/landingabout" class="nav-item nav-link">About</a>
                         <a href="<?= base_url() ?>LandingController/landingservice" class="nav-item nav-link active">Services</a>
-                        <a href="<?= base_url() ?>LandingController/landingcontact" class="nav-item nav-link">Contact</a>
+
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
@@ -165,10 +165,8 @@
                 ?>
                     <div class="testimonial-item">
 
-                        <img class="position-relative rounded-circle bg-white shadow mx-auto" src="" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
                         <div class="bg-light text-center p-4 pt-0">
-                            <h5 class="font-weight-medium mt-5"><?php echo $feedback->customer_name ?></h5>
-                            <p class="text-muted font-italic">Profession</p>
+                            <h5 class="font-weight-medium mt-5"><?php echo $feedback->name_customer ?></h5>
                             <p class="m-0"><?php echo $feedback->description ?></p>
                         </div>
                     </div>
@@ -180,32 +178,6 @@
         <!-- Testimonial End -->
 
 
-        <div class="main-feedback-form">
-            <form action="<?= base_url() ?>FeedbackController/addfeedback" method="POST">
-
-                <label for="customer_name">Name</label>
-                <input type="text" id="customer_name" name="customer_name" class="customer_name" placeholder="Your name" required>
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="email" placeholder="Your email" required>
-
-                <label for="phone_number">Phone Number</label>
-                <input type="tel" name="phone_number" class="tel" maxlength="10" id="phone_number" placeholder="Your phone number" required>
-
-                <label for="feedback_type">Feedback Type</label><br>
-                <input type="radio" id="comments" name="feedback_type" value="Comments">
-                <label for="comments">Comments</label>
-                <input type="radio" id="suggestions" name="feedback_type" value="Suggestions">
-                <label for="suggestions">Suggestions</label>
-                <input type="radio" id="questions" name="feedback_type" value="Questions">
-                <label for="questions">Questions</label><br><br>
-
-                <label for="description">Description of your Feedback:</label>
-                <textarea name="description" id="description" placeholder="Please describe your feedback here" rows="5" required></textarea>
-
-                <input name="submit" type="submit" value="Submit">
-            </form>
-        </div>
 
 
         <style>
@@ -277,7 +249,7 @@
                         <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landing"><i class="fa fa-angle-right mr-2"></i>Home</a>
                         <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingabout"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                         <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingservice"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                        <a class="text-white" href="<?= base_url() ?>LandingController/landingcontact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+
                     </div>
                 </div>
             </div>

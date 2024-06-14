@@ -68,24 +68,6 @@
                 </div>
             </li> -->
 
-
-
-            <!-- Nav Item - Report Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-file-pdf"></i>
-                    <span>Reports Section</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url() ?>E_ReportController/report">Employee</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>E_ReportController/report_cust">Transaction</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>expenditure/report">Feedback!</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
             <!-- <hr class="sidebar-divider"> -->
 
             <!-- Nav Item - Data Mahasiswa -->
@@ -141,11 +123,14 @@
                         </li>
 
                     </ul>
-                    <div class="font-weight-bold mr-4">
-                        Welcome, <? //php echo $username 
-                                    ?>!
-                    </div>
-
+                    <?php foreach ($userdata as $user) {
+                    ?>
+                        <div class="font-weight-bold mr-4">
+                            Welcome, <?= $user->name_employee
+                                        ?>!
+                        </div>
+                    <?php }
+                    ?>
                 </nav>
                 <!-- End of Topbar -->
 
@@ -168,4 +153,3 @@
                         </div>
                     </div>
                 </div>
-                E_

@@ -16,16 +16,12 @@ class E_TransactionController extends Controller
 
     public function Transaction()
     {
+        $staff = session()->get('logged_staff');
+        $data['userdata'] = $this->dbtrans->getLoggedStaffUserData($staff);
+
+        $data['data_transaction'] = $this->dbtrans->getTransac();
 
 
-     $data['data_transaction'] = $this->dbtrans->getTransac();
-       
-
-       return view("empacc/transactions/transaction",$data);
-   
+        return view("empacc/transactions/transaction", $data);
     }
-
-    
 }
-
-?>

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class E_TransactionModel extends Model
 {
-    
+
 
     public function getTransac()
     {
@@ -39,7 +39,22 @@ class E_TransactionModel extends Model
         }
     }
 
-    
+    public function getLoggedStaffUserData($emp)
+    {
+        $builder = $this->db->query("
+        SELECT 
+        e.name_employee,
+        u.employee_id
+    FROM 
+        user u
+    left JOIN 
+        employee e ON e.employee_id = u.employee_id
+    Where u.employee_id = '$emp'");
+        $result = $builder->getResult();
+
+
+        return $result;
+    }
 
     public function addhousehold($data)
     {
@@ -53,7 +68,7 @@ class E_TransactionModel extends Model
 
 
 
-    
+
 
     public function deleteHousehold($id)
     {

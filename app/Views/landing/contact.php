@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DRYME - Free Laundry Service Website Template</title>
+    <title>Laundry Management System | CodeIgniter Project</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="<?= base_url() ?>public/landing/img/favicon.ico" rel="icon">
+    <link href="<?= base_url() ?>public/assets/img/logo.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -75,7 +75,7 @@
                         <a href="<?= base_url() ?>LandingController/landing" class="nav-item nav-link">Home</a>
                         <a href="<?= base_url() ?>LandingController/landingabout" class="nav-item nav-link">About</a>
                         <a href="<?= base_url() ?>LandingController/landingservice" class="nav-item nav-link">Services</a>
-                        <a href="<?= base_url() ?>LandingController/landingcontact" class="nav-item nav-link">Contact</a>
+
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
@@ -208,7 +208,7 @@
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landing"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingabout"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingservice"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white" href="<?= base_url() ?>LandingController/landingcontact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+
                 </div>
             </div>
         </div>

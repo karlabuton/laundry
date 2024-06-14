@@ -11,8 +11,12 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form action="<?= base_url() ?>ItemandslotController/Edit/<?= $data_items[0]->itemandslot_id ?>" method="post" class="user needs-validation mx-3 mb-4" novalidate>
+        <form action="<?= base_url() ?>ItemandslotController/editItems/<?= $data_items[0]->itemandslot_id ?>" method="post" class="user needs-validation mx-3 mb-4" enctype="multipart/form-data" novalidate>
             <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label">Image:</label>
+                    <input name="txt_image" class="form-control input-sm" type="file" />
+                </div>
                 <div class="form-group">
                     <label class="control-label">Item Name</label>
                     <input type="text" class="form-control" title="Fill in the Item Name with Letters" placeholder='Items Name' name="item_avail" value="<?php echo $data_items[0]->item_avail ?>" required>
@@ -23,7 +27,8 @@
                 </div>
             </div>
             <div class="modal-footer d-flex">
-                <button type="button" class="flex-fill btn btn-danger rounded-0">Cancel</button>
+                <a class="flex-fill btn btn-danger btn-block rounded-pill" href="<?php echo base_url() ?>ItemandslotController/items">Cancel</a>
+
                 <button type="submit" class="flex-fill btn btn-primary rounded-0">Save</button>
             </div>
         </form>

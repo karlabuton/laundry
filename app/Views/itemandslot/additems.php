@@ -22,12 +22,16 @@
 
                     </form> -->
 
-             <form action="<?= base_url() ?>ItemandslotController/additems" method="post" class="user needs-validation mx-3 mb-4" novalidate>
+             <form action="<?= base_url() ?>ItemandslotController/additems" method="post" class="user needs-validation mx-3 mb-4" enctype="multipart/form-data" novalidate>
                  <div class="modal-body">
                      <!-- <div class="form-group">
                          <label class="control-label ">ID</label>
                          <input type="text" class="form-control" placeholder="ID Employee" autofocus name="employee_id" required>
                      </div> -->
+                     <div class="form-group">
+                         <label class="control-label">Image:</label>
+                         <input name="txt_image" class="form-control input-sm" type="file" />
+                     </div>
 
                      <div class="form-group">
                          <label class="control-label ">Item Name</label>

@@ -15,6 +15,7 @@ namespace Config;
  */
 class Paths
 {
+
     /**
      * ---------------------------------------------------------------
      * SYSTEM FOLDER NAME

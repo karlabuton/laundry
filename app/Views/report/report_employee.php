@@ -14,33 +14,31 @@ $page_session = \CodeIgniter\Config\Services::session();
             <h4 class="my-auto font-weight-bold mb-0 ">Employee Data Report</h4>
         </div>
         <div class="card-body">
-            <form name="form_filter_employee" action="<?php echo base_url() . 'ReportController/report_filter' ?>" method="post" class="w-100 user needs-validation" novalidate>
-                <h5>Active on time range</h5>
+            <form action="<?= base_url() ?>ReportController/report_filter" method="post">
+                <h5>Select date in range</h5>
                 <div class="row align-items-end">
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="control-label ">From</label>
-                            <input type="date" class="form-control" name="date_in" value="<?php echo set_value('date_in') ?>" required>
+                            <label class="control-label">From</label>
+                            <input type="date" class="form-control" name="start_date" required>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="control-label ">To</label>
-                            <input type="date" class="form-control" name="date_at" value="<?php echo set_value('date_at') ?>" required>
+                            <label class="control-label">To</label>
+                            <input type="date" class="form-control" name="end_date" required>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <button type="submit" class="flex-fill btn btn-primary rounded-0 btn-block px-4"><i class="fa fa-search"></i> Search</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <a target="blank" href="<?php echo base_url() . 'ReportController/print_Etrans/' . set_value('date_in') . '/' . set_value('date_at') ?>" class="btn btn-success btn-block rounded-0 shadow-sm"><i class="fas fa-print fa-sm text-white-500"></i> Print</a>
+                            <button type="submit" class="btn btn-primary btn-block rounded-0 shadow-sm">
+                                <i class="fas fa-print fa-sm text-white-500"></i> Search
+                            </button>
                         </div>
                     </div>
                 </div>
             </form>
+
 
             <div class="d-flex m-3">
 
@@ -70,7 +68,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                                 <td><?php echo $employee->name_employee . ' ' ?><sup>(<?php echo substr($employee->gender, 0, 1) ?>)</sup></td>
                                 <td><?php echo $employee->address ?></td>
                                 <td><?php echo $employee->number ?></td>
-                                <td>$<?php echo $employee->salary ?></td>
+                                <td>Php <?php echo $employee->salary ?></td>
                                 <td><?php echo $employee->date_join ?></td>
                                 <td><?php if ($employee->date_stop == '0000-00-00') {
                                         echo '-';

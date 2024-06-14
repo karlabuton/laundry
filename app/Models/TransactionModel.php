@@ -10,7 +10,7 @@ class TransactionModel extends Model
 
     public function getTransac()
     {
-        $builder = $this->db->query('
+        $builder = $this->db->query("
         SELECT 
         c.name_customer, 
         e.name_employee, 
@@ -19,13 +19,15 @@ class TransactionModel extends Model
         r.total, 
         r.date,
         r.employee_id,
-        r.req_id,
         e.active,
         r.c_id,
         r.req_id,
         i.item_avail,
+        i.item_price,
         r.itemandslot_id,
-        r.purpose
+        r.purpose,
+        r.prio_num,
+        c.phone
 
     FROM 
         request r
@@ -34,7 +36,8 @@ class TransactionModel extends Model
     left JOIN 
         employee e ON e.employee_id = r.employee_id
     left JOIN 
-        itemandslot i ON i.itemandslot_id = r.itemandslot_id;');
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+        where r.req_status = 'pending';");
         $result = $builder->getResult();
 
         if (count($result) >= 0) {
@@ -112,6 +115,19 @@ class TransactionModel extends Model
             return false;
         }
     }
+    public function updatestat($data, $id)
+    {
+        $builder = $this->db->table('request')->where('req_id', $id);
+        $builder->update($data);
+
+        if ($this->db->affectedRows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function deletetrans($id)
     {
         $builder = $this->db->table('request');

@@ -4,20 +4,31 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\FeedbackModel;
+use App\Models\landingModel;
 
 class FeedbackController extends Controller
 {
     public $dbfeedback;
+    public $dbsign;
     public function __construct()
     {
         helper('form');
         $this->dbfeedback = new FeedbackModel();
+        $this->dbsign = new landingModel();
     }
 
     public function feedback()
     {
+        $data['data_feedback'] = $this->dbsign->getFeed();
+        return view("landing/service", $data);
+    }
+    public function feedbackcomment()
+    {
+        $cust = session()->get('logged_customer');
+        $data['userdata'] = $this->dbfeedback->getLoggedCustUserData($cust);
+        $data['data_cust'] = $this->dbfeedback->getCustname($cust);
 
-        return view("landing/service");
+        return view("customeracc/feedback", $data);
     }
 
     public function addfeedback()
@@ -30,30 +41,26 @@ class FeedbackController extends Controller
         }
 
         $session = \CodeIgniter\Config\Services::session();
+        $cust = session()->get('logged_customer');
+        $c_id = $cust;
 
-        $customer_name = $this->request->getVar('customer_name');
-        $email = $this->request->getVar('email');
-        $phone_number = $this->request->getVar('phone_number');
-        $feedback_type = $this->request->getVar('feedback_type');
         $description = $this->request->getVar('description');
 
 
         $data = array(
-            'customer_name' => $customer_name,
-            'email' => $email,
-            'phone_number' => $phone_number,
-            'feedback_type' => $feedback_type,
+
+            'c_id' => $c_id,
             'description' => $description,
 
         );
         $status = $this->dbfeedback->addfeed($data);
 
-        if (!$status) {
+        if ($status) {
             $session->setTempdata('success', 'Added Successfully!', 3);
-            return redirect()->to(base_url() . "LandingController/landingservice");
+            return redirect()->to(base_url() . "FeedbackController/feedbackcomment");
         } else {
             $session->setTempdata('error', 'Not Added! Try Again!', 3);
-            return redirect()->to(base_url() . "LandingController/landingservice");
+            return redirect()->to(base_url() . "FeedbackController/feedbackcomment");
         }
     }
 }

@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-3" href="<?php echo base_url() ?>DashbaordController/c_dashboard">
+            <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center my-3" href="<?= base_url() ?>DashboardController/c_dashboard">
                 <div class="sidebar-brand-icon">
                     <div class="sidebar-brand-text mx-3">LMS</div>
                 </div>
@@ -20,8 +20,8 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url() ?>DashboardController/c_dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <i class="fas fa-fw fa-tachometer-alt" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -29,32 +29,40 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url() ?>RequestController/customer_req">
-                    <i class="fas fa-fw fa-user-tie"></i>
-                    <span>Request</span></a>
+                    <i class="fas fa-fw fa-user-tie" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Request</span></a>
             </li>
 
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url() ?>C_Vitems_slotController/view_item">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>View Items & Slot</span></a>
+                    <i class="fas fa-fw fa-users" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">View Items & Slot</span></a>
             </li>
 
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url() ?>RequestController/transaction">
-                    <i class="fas fa-fw fa-dollar-sign"></i>
-                    <span>Transactions</span></a>
+                    <i class="fas fa-fw fa-dollar-sign" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Transactions</span></a>
             </li>
 
             <!-- <hr class="sidebar-divider"> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url() ?>C_StatusController/status">
-                    <i class="fas fa-fw fa-share"></i>
-                    <span>Status</span></a>
+                    <i class="fas fa-fw fa-share" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Status</span></a>
+            </li>
+
+            <!-- <hr class="sidebar-divider"> -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url() ?>FeedbackController/feedbackcomment">
+                    <i class="fas fa-fw fa-share" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Feedback!</span></a>
             </li>
 
             <!-- <hr class="sidebar-divider"> -->
@@ -78,27 +86,14 @@
 
 
 
-            <!-- Nav Item - Report Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-file-pdf"></i>
-                    <span>Reports Section</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url() ?>expenditure/report">Feedback!</a>
-                    </div>
-                </div>
-            </li>
 
-            <!-- Divider -->
             <!-- <hr class="sidebar-divider"> -->
 
             <!-- Nav Item - Data Mahasiswa -->
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-power-off icon-nav"></i>
-                    <span>Logout</span>
+                    <i class="fas fa-power-off icon-nav" style="font-size: 25px;"></i>
+                    <span style="font-size: 18px; font-weight: bold;">Logout</span>
                 </a>
             </li>
 
@@ -132,7 +127,7 @@
 
                         <!-- Web Page Logo -->
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url() . 'Dashboard/c_dashboard' ?>">
+                            <a class="nav-link" href="<?php echo base_url() . 'DashboardController/c_dashboard' ?>">
                                 <img class="logo" src="<?php echo base_url() . 'public/assets/img/logo.jpg' ?>">
                             </a>
                         </li>

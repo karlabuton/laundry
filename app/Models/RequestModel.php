@@ -23,20 +23,52 @@ class RequestModel extends Model
         r.req_id,
         e.active,
         r.c_id,
-        r.req_id,
+        r.req_status,
         i.item_avail,
         r.itemandslot_id,
         c.gender_c,
         c.address,
         c.phone,
         r.purpose
+    FROM 
+        request r
+    LEFT JOIN 
+        customer c ON c.c_id = r.c_id
+    LEFT JOIN 
+        employee e ON e.employee_id = r.employee_id
+    LEFT JOIN 
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+    WHERE 
+        r.c_id = '$id' AND (r.req_status = 'complete' OR r.req_status ='released')");
+        $result = $builder->getResult();
+
+        if (count($result) >= 0) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function getpaypment($id)
+    {
+        $builder = $this->db->query("
+        SELECT 
+        c.name_customer, 
+        r.weight, 
+        i.item_avail, 
+        r.total, 
+        r.date,
+        r.req_id,
+        r.c_id,
+        r.req_id,
+        i.item_price,
+        r.itemandslot_id,
+        r.purpose
 
     FROM 
         request r
     left JOIN 
         customer c ON c.c_id = r.c_id
-    left JOIN 
-        employee e ON e.employee_id = r.employee_id
     left JOIN 
         itemandslot i ON i.itemandslot_id = r.itemandslot_id
 	where r.c_id = '$id'");
@@ -99,6 +131,60 @@ class RequestModel extends Model
         $this->db->table('request')->insert($data);
         if ($this->db->affectedRows() >= 1) {
             return $this->db->insertID();
+        } else {
+            return false;
+        }
+    }
+    public function updatereq($data, $c_id)
+    {
+        $this->db->table('request')
+            ->where('c_id', $c_id)
+            ->update($data);
+
+        if ($this->db->affectedRows() >= 1) {
+            return $this->db->insertID();
+        } else {
+            return false;
+        }
+    }
+    public function getTransactionsByDateRange($dateIn, $dateAt)
+    {
+        return $this->db->table('request')
+            ->select('*')
+            ->where('date >=', $dateIn)
+            ->where('date <=', $dateAt)
+            ->get()
+            ->getResult();
+    }
+
+    public function getAllinfo($id)
+    {
+        $builder = $this->db->query("
+        SELECT 
+        c.name_customer, 
+        r.weight, 
+        i.item_avail, 
+        i.item_price,
+        r.total, 
+        r.date,
+        r.req_id,
+        r.c_id,
+        r.req_id,
+        i.item_avail,
+        r.itemandslot_id,
+        r.purpose
+
+    FROM 
+        request r
+    left JOIN 
+        customer c ON c.c_id = r.c_id
+    left JOIN 
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+	where r.req_id = '$id'");
+        $result = $builder->getResult();
+
+        if (count($result) >= 0) {
+            return $result;
         } else {
             return false;
         }

@@ -68,11 +68,37 @@ class DashboardModel extends Model
             return 0;
         }
     }
+    public function totalreqC($id)
+    {
+        $builder = $this->db->table('request');
+        $builder->selectCount('req_id');
+        $builder->where('c_id', $id);
+        $result = $builder->countAllResults();
+        if ($result > 0) {
+            return $result;
+        } else {
+            return 0;
+        }
+    }
     public function totalpending()
     {
         $builder = $this->db->table('request');
         $builder->selectCount('req_id');
         $builder->where('req_status', 'pending');
+        $result = $builder->countAllResults();
+
+        if ($result > 0) {
+            return $result;
+        } else {
+            return 0;
+        }
+    }
+    public function totalCpending($id)
+    {
+        $builder = $this->db->table('request');
+        $builder->selectCount('req_id');
+        $builder->where('req_status', 'pending');
+        $builder->where('c_id', $id);
         $result = $builder->countAllResults();
 
         if ($result > 0) {
@@ -93,11 +119,36 @@ class DashboardModel extends Model
             return 0;
         }
     }
+    public function statusC($id)
+    {
+        $builder = $this->db->table('request');
+        $builder->selectCount('req_status');
+        $builder->where('c_id', $id);
+        $result = $builder->countAllResults();
+
+        if ($result > 0) {
+            return $result;
+        } else {
+            return 0;
+        }
+    }
     public function totalincome()
     {
         $builder = $this->db->table('request');
         $builder->select('SUM(request.total) + COALESCE(SUM(itemandslot.item_price), 0) AS total_sum');
         $builder->join('itemandslot', 'itemandslot.itemandslot_id = request.itemandslot_id', 'left');
+        $result = $builder->get()->getRowArray();
+
+
+
+        return $result;
+    }
+    public function totalincomeC($id)
+    {
+        $builder = $this->db->table('request');
+        $builder->select('SUM(request.total) + COALESCE(SUM(itemandslot.item_price), 0) AS total_sum');
+        $builder->join('itemandslot', 'itemandslot.itemandslot_id = request.itemandslot_id', 'left');
+        $builder->where('c_id', $id);
         $result = $builder->get()->getRowArray();
 
 
@@ -133,6 +184,22 @@ class DashboardModel extends Model
     left JOIN 
         customer c ON c.c_id = u.c_id
     Where u.c_id = '$Cust'");
+        $result = $builder->getResult();
+
+
+        return $result;
+    }
+    public function getLoggedStaffUserData($emp)
+    {
+        $builder = $this->db->query("
+        SELECT 
+        e.name_employee,
+        u.employee_id
+    FROM 
+        user u
+    left JOIN 
+        employee e ON e.employee_id = u.employee_id
+    Where u.employee_id = '$emp'");
         $result = $builder->getResult();
 
 

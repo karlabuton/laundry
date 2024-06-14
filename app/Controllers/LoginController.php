@@ -33,7 +33,7 @@ class LoginController extends Controller
                     return redirect()->to(base_url() . 'DashboardController/c_dashboard');
                 } elseif ($usertype == 'Staff' && $usertype == $userdata['usertype']) {
                     // echo "Welcome Staff";
-                    $this->session->set('logged_staff', $userdata['user_id']);
+                    $this->session->set('logged_staff', $userdata['employee_id']);
                     return redirect()->to(base_url() . 'DashboardController/E_dashboard');
                 } elseif ($usertype == 'Administrator' && $usertype == $userdata['usertype']) {
                     echo "Welcome Administrator";

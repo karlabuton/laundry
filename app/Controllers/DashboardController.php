@@ -41,16 +41,21 @@ class DashboardController extends Controller
     }
     $cust = session()->get('logged_customer');
     $data['userdata'] = $this->dbdash->getLoggedCustUserData($cust);
-    $data['data_dash'] = $this->dbdash->getCDash();
-    $data['totalrequest'] = $this->dbdash->totalrequestC();
-
+    $data['totalrequest'] = $this->dbdash->totalreqC($cust);
+    $data['totalpending'] = $this->dbdash->totalCpending($cust);
+    $data['status'] = $this->dbdash->statusC($cust);
+    $data['totalincome'] = $this->dbdash->totalincomeC($cust);
+    // print_r($data);
     return view("dashboard/custdashboard", $data);
   }
   public function E_dashboard()
   {
-
-
-    $data['data_dash'] = $this->dbdash->getCDash();
+    if (!(session()->has('logged_customer') || session()->has('logged_admin') || session()->has('logged_staff'))) {
+      return redirect()->to(base_url() . "LoginController/login");
+    }
+    $staff = session()->get('logged_staff');
+    $data['userdata'] = $this->dbdash->getLoggedStaffUserData($staff);
+    $data['data_dash'] = $this->dbdash->getDash();
 
 
     return view("dashboard/E_dashboard", $data);

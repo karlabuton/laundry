@@ -32,13 +32,13 @@ $page_session = \CodeIgniter\Config\Services::session();
                     <thead>
                         <tr class="">
 
-                            <th>Customer</th>
-                            <th>Employee</th>
-                            <th>Laundry Type</th>
-                            <th>Weight</th>
+
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Mobile Number</th>
                             <th>Add Ons</th>
                             <th>Total</th>
-                            <th>Date</th>
+
                             <th class="actions">Actions</th>
                         </tr>
                     </thead>
@@ -51,20 +51,32 @@ $page_session = \CodeIgniter\Config\Services::session();
                             <tr>
 
 
+
                                 <td>
-                                    <span class="row px-3  text-xs"><?php echo $transaction->c_id ?></span>
-                                    <span class="row px-3"><?php echo $transaction->name_customer ?></span>
+
+                                    <?php echo $transaction->date ?>
                                 </td>
-                                <td>
-                                    <span class="row px-3  text-xs"><?php echo $transaction->employee_id ?></span>
-                                    <span class="row px-3"><?php echo $transaction->name_employee ?></span>
-                                </td>
-                                <td><?php echo $transaction->purpose ?></td>
-                                <td><?php echo $transaction->weight ?> KG</td>
+                                <td><?php echo $transaction->name_customer ?></td>
+                                <td><?php echo $transaction->phone ?></td>
                                 <td><?php echo $transaction->item_avail ?></td>
-                                <td><?php echo $transaction->total ?></td>
-                                <td><?php echo $transaction->date ?></td>
+                                <td> <?php
+                                        $total = (float)$transaction->total;
+
+                                        // Check if there are any add-ons
+                                        if (!empty($transaction->item_price)) {
+                                            // If add-ons exist, calculate and display the total including add-ons
+                                            echo $total + (float)$transaction->item_price;
+                                        } else {
+                                            // If no add-ons, display the base total
+                                            echo $total;
+                                        }
+                                        ?>
+                                </td>
                                 <td class="action-icons text-center">
+
+                                    <a href="" data-toggle="modal" data-target="#modalAccept<?= $transaction->req_id ?>">
+                                        <i title="Accept" class="fa fa-check"></i>
+                                    </a>
 
                                     <a href="<?php echo base_url() . 'TransactionController/deletetrans/' . $transaction->req_id ?>">
                                         <i title="Delete" class="fas fa-trash text-lg text-danger"></i>
@@ -82,6 +94,7 @@ $page_session = \CodeIgniter\Config\Services::session();
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+<?= $this->include("transactions/modalAccept") ?>
 <?= $this->include("transactions/addtrans") ?>
 
 

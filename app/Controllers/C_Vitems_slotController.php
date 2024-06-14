@@ -18,7 +18,7 @@ class C_Vitems_slotController extends Controller
     {
         $cust = session()->get('logged_customer');
         $data['userdata'] = $this->dbview->getLoggedCustUserData($cust);
-        $data['data_customer'] = $this->dbview->getItems();
+        $data['data_customer'] = $this->dbview->getItems($cust);
         return view("customeracc/item_slot", $data);
     }
 }

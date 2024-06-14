@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class E_CustomerModel extends Model
 {
-    
+
 
     public function getCustomer()
     {
@@ -20,25 +20,20 @@ class E_CustomerModel extends Model
         }
     }
 
-    
-
-    public function addhousehold($data)
+    public function getLoggedStaffUserData($emp)
     {
-        $this->db->table('tbl_household')->insert($data);
-        if ($this->db->affectedRows() >= 1) {
-            return $this->db->insertID();
-        } else {
-            return false;
-        }
-    }
+        $builder = $this->db->query("
+        SELECT 
+        e.name_employee,
+        u.employee_id
+    FROM 
+        user u
+    left JOIN 
+        employee e ON e.employee_id = u.employee_id
+    Where u.employee_id = '$emp'");
+        $result = $builder->getResult();
 
 
-
-    
-
-    public function deleteHousehold($id)
-    {
-        $builder = $this->db->table('tbl_household');
-        $builder->delete(['household_id' => $id]);
+        return $result;
     }
 }

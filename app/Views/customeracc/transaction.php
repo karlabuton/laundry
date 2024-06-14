@@ -14,7 +14,7 @@ $page_session = \CodeIgniter\Config\Services::session();
             <h4 class="my-auto font-weight-bold mb-0 ">Transaction</h4>
         </div>
         <div class="card-body">
-            <form name="form_filter_employee" action="<?php echo base_url() . 'ReportController/transaction' ?>" method="post" class="w-100 user needs-validation" novalidate>
+            <form name="form_filter_employee" action="<?php echo base_url() . 'RequestController/filter' ?>" method="post" class="w-100 user needs-validation" novalidate>
                 <h5>Active on time range</h5>
                 <div class="row align-items-end">
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -57,6 +57,7 @@ $page_session = \CodeIgniter\Config\Services::session();
                             <th>Weight</th>
                             <th>Add ONs</th>
                             <th>Total</th>
+                            <th>Status</th>
                             <th>Date</th>
 
                         </tr>
@@ -68,12 +69,13 @@ $page_session = \CodeIgniter\Config\Services::session();
                         ?>
                             <tr>
 
-                                <td><?php echo $employee->name_employee . ' ' ?><sup>(<?php echo substr($employee->gender, 0, 1) ?>)</sup></td>
+                                <td><?php echo $employee->name_customer . ' ' ?><sup>(<?php echo substr($employee->gender_c, 0, 1) ?>)</sup></td>
                                 <td><?php echo $employee->address ?></td>
-                                <td><?php echo $employee->number ?></td>
+                                <td><?php echo $employee->phone ?></td>
                                 <td>Php<?php echo $employee->weight ?></td>
                                 <td><?php echo $employee->item_avail ?></td>
                                 <td><?php echo $employee->total ?></td>
+                                <td><?php echo $employee->req_status ?></td>
                                 <td><?php echo $employee->date ?></td>
                             </tr>
                         <?php } ?>

@@ -17,15 +17,11 @@ class E_CustomerController extends Controller
     public function customer()
     {
 
+        $staff = session()->get('logged_staff');
+        $data['userdata'] = $this->dbcustomer->getLoggedStaffUserData($staff);
+        $data['data_customer'] = $this->dbcustomer->getCustomer();
 
-     $data['data_customer'] = $this->dbcustomer->getCustomer();
-       
 
-       return view("empacc/customer/customer",$data);
-   
+        return view("empacc/customer/customer", $data);
     }
-
-    
 }
-
-?>

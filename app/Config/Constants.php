@@ -25,6 +25,12 @@ defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
  */
 defined('COMPOSER_PATH') || define('COMPOSER_PATH', ROOTPATH . 'vendor/autoload.php');
 
+
+// Other existing code in Constants.php...
+
+// Define the base path
+define('BASEPATH', realpath(__DIR__ . '/../../'));
+
 /*
  |--------------------------------------------------------------------------
  | Timing Constants

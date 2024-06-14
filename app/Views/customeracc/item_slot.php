@@ -21,9 +21,10 @@ $page_session = \CodeIgniter\Config\Services::session();
                 <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="">
-
+                            <th>Image</th>
                             <th>Available Item</th>
                             <th>Price</th>
+
                         </tr>
                     </thead>
 
@@ -33,7 +34,17 @@ $page_session = \CodeIgniter\Config\Services::session();
                         foreach ($data_customer as $customer) {
                         ?>
                             <tr>
+                                <td style="width:70px;">
+                                    <?php if (!empty($customer->txt_image)) : ?>
+                                        <?php $imagePath = base_url('public/uploads/' . $customer->txt_image); ?>
 
+                                        <img src="<?= $imagePath ?>" style="width:60px;height:60px;" />
+                                    <?php else : ?>
+                                        <!-- Placeholder if no image is available -->
+                                        No Image Available
+                                    <?php endif; ?>
+
+                                </td>
                                 <td><?php echo $customer->item_avail ?></td>
                                 <td><?php echo $customer->item_price ?></td>
 
@@ -51,7 +62,5 @@ $page_session = \CodeIgniter\Config\Services::session();
 <!-- End of Main Content -->
 
 
-<? //= $this->include("resident/view_modal") 
-?>
 
 <?= $this->endSection() ?>

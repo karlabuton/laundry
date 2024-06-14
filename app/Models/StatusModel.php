@@ -10,10 +10,10 @@ class StatusModel extends Model
 
     public function getStat()
     {
-        $builder = $this->db->query('
+        $builder = $this->db->query("
         SELECT 
         c.name_customer, 
-        e.name_employee, 
+        r.req_status, 
         r.weight, 
         i.item_avail, 
         r.total, 
@@ -23,7 +23,8 @@ class StatusModel extends Model
         r.req_id,
         c.phone,
         e.active,
-        i.itemandslot_id
+        i.itemandslot_id,
+        r.prio_num
 
     FROM 
         request r
@@ -32,7 +33,8 @@ class StatusModel extends Model
     left JOIN 
         employee e ON e.employee_id = r.employee_id
     left JOIN 
-        itemandslot i ON i.itemandslot_id = r.itemandslot_id;');
+        itemandslot i ON i.itemandslot_id = r.itemandslot_id
+        where r.req_status = 'accepted'OR r.req_status = 'progress' OR r.req_status = 'completed'");
         $result = $builder->getResult();
 
         if (count($result) >= 0) {

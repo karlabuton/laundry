@@ -38,24 +38,25 @@ class TransactionController extends Controller
 
         $session = \CodeIgniter\Config\Services::session();
 
-        $c_id = $this->request->getVar('c_id');
-        $employee_id = $this->request->getVar('employee_id');
-        $weight = $this->request->getVar('weight');
-        $purpose = $this->request->getVar('purpose');
-        $total = $this->request->getVar('total');
-        $itemandslot_id = $this->request->getVar('itemandslot_id');
         $date = $this->request->getVar('date');
+        $c_id = $this->request->getVar('c_id');
+        $purpose = $this->request->getVar('laundry_type');
+        $itemandslot_id = $this->request->getVar('itemandslot_id');
+        $weight = $this->request->getVar('weight');
+        $total = $this->request->getVar('total');
+
 
 
 
         $empdata = array(
-            'c_id' => $c_id,
-            'employee_id' => $employee_id,
-            'weight' => $weight,
-            'purpose' => $purpose,
-            'total' => $total,
-            'itemandslot_id' => $itemandslot_id,
             'date' => $date,
+            'c_id' => $c_id,
+            'purpose' => $purpose,
+            'itemandslot_id' => $itemandslot_id,
+            'weight' => $weight,
+            'total' => $total,
+
+
 
         );
         $status = $this->dbtrans->addtrans($empdata);
@@ -113,6 +114,27 @@ class TransactionController extends Controller
             return redirect()->to(base_url() . "TransactionController/Transaction");
         } else {
             $session->setTempdata('error', 'Was not Deleted!', 3);
+            return redirect()->to(base_url() . "TransactionController/Transaction");
+        }
+    }
+    public function accept($id)
+    {
+        $session = \CodeIgniter\Config\Services::session();
+
+
+
+        $empdata = array(
+
+            'req_status' => "accepted"
+
+        );
+        $status = $this->dbtrans->updatestat($empdata, $id);
+
+        if ($status) {
+            $session->setTempdata('success', 'Accepted Successfully!', 3);
+            return redirect()->to(base_url() . "TransactionController/Transaction");
+        } else {
+            $session->setTempdata('error', 'Not Accepted! Try Again!', 3);
             return redirect()->to(base_url() . "TransactionController/Transaction");
         }
     }

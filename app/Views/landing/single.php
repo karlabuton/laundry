@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DRYME - Free Laundry Service Website Template</title>
+    <title>Laundry Management System | CodeIgniter Project</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="<?= base_url() ?>public/landing/img/favicon.ico" rel="icon">
+    <link href="<?= base_url() ?>public/assets/img/logo.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -87,7 +87,7 @@
                                 <a href="<?= base_url() ?>LandingController/single" class="dropdown-item active">Blog Detail</a>
                             </div>
                         </div>
-                        <a href="<?= base_url() ?>LandingController/landingcontact" class="nav-item nav-link">Contact</a>
+
                     </div>
                 </div>
             </nav>
@@ -439,7 +439,7 @@
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

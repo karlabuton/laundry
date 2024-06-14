@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DRYME - Free Laundry Service Website Template</title>
+    <title>Laundry Management System | CodeIgniter Project</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="<?= base_url() ?>public/landing/img/favicon.ico" rel="icon">
+    <link href="<?= base_url() ?>public/assets/img/logo.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -74,7 +74,7 @@
                         <a href="<?= base_url() ?>LandingController/landing" class="nav-item nav-link active">Home</a>
                         <a href="<?= base_url() ?>LandingController/landingabout" class="nav-item nav-link">About</a>
                         <a href="<?= base_url() ?>LandingController/landingservice" class="nav-item nav-link">Services</a>
-                        <a href="<?= base_url() ?>LandingController/landingcontact" class="nav-item nav-link">Contact</a>
+
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Account</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
@@ -94,10 +94,10 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="c:\xampp\htdocs\laundry-service-website-template\img\LOGO.jpg" alt="Image">
+                    <img class="w-100" src="<?= base_url() ?>public/landing/ss/logo.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center align-self-center ">
                         <div class="p-3" style="max-width: 1200px;">
-                            <h1 class="display-3 text-white mb-md-4">Online Laundry Shop Management System with Customer Notification</h1>
+                            <h1 class="display-3 text-white mb-md-4">Online Laundry Shop with Customer Notification System</h1>
                         </div>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
         <div class="container pt-0 pt-lg-4">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid" src="c:\Users\AmBoo\Downloads\418607557_2401045970093894_6385127733305774848_n.jpg" alt="">
+                    <img class="img-fluid" src="<?= base_url() ?>public/landing/ss/logo2.jpg" alt="Image">
                 </div>
                 <div class="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
                     <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Learn About Us</h6>
@@ -301,7 +301,7 @@
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landing"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingabout"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                     <a class="text-white mb-2" href="<?= base_url() ?>LandingController/landingservice"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white" href="<?= base_url() ?>LandingController/landingcontact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+
                 </div>
             </div>
         </div>

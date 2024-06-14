@@ -10,8 +10,22 @@ class LandingModel extends Model
 
     public function getFeed()
     {
-        $builder = $this->db->table('tbl_feedback')->select('*');
-        $result = $builder->get()->getResult();
-        return $result;
+        $builder = $this->db->query("
+        SELECT 
+        c.name_customer, 
+        r.description
+       
+
+    FROM 
+        tbl_feedback r
+    left JOIN 
+        customer c ON c.c_id = r.c_id");
+        $result = $builder->getResult();
+
+        if (count($result) >= 0) {
+            return $result;
+        } else {
+            return false;
+        }
     }
 }
